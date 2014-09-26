@@ -29,25 +29,26 @@ end
 
 class MyClass
 	include AddBeforeFilter
-	before_filter :aa, :bb
+	before_filter :foo, :bar
 
-	def foo(str,re)
-		puts "#{str} #{re}"
-	end
 
 	def hello(name)
 		puts "hello #{name}"
 	end
 
+	def done
+		puts "done"
+	end
+
 	private
-	def aa
+	def foo
 		puts "first aa"
 	end
 
-	def bb
+	def bar
 		puts "first bb"
 	end
 end
 
-MyClass.new.foo("nihao", "sean")
 MyClass.new.hello("annie")
+MyClass.new.done
